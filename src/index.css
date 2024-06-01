@@ -104,6 +104,18 @@ header{
   z-index: 1000000;
 
 }
+.transactions .expense::after{
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(122, 20, 5, 0.815);
+  width: 4px;
+  height: 100%;
+  z-index: 1000000;
+
+}
 
 form p {
   margin: 9px 0;
