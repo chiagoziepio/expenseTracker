@@ -2,7 +2,9 @@ import React from 'react'
 
 const header = () => {
   return (
-    <header>EXPENSE TRACKER</header>
+    <header>
+      <p>EXPENSE TRACKER</p>
+    </header>
   )
 }
 
