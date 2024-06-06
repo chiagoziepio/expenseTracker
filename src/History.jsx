@@ -3,9 +3,9 @@ import {transctionContext} from './context/transactionContextprovider'
 
 const History = () => {
   const{state} = useContext(transctionContext)
-  const trans = state.transactions
-
-  /* console.log(trans);  */
+  const trans = state.transactions;
+  
+  /* console.log(numbers);  */
   return (
     <div className='transactions'>
         <p>Transactions</p>
@@ -14,7 +14,7 @@ const History = () => {
 
             <li className={tran.amount < 0 ? "expense": "income"}key={tran.id}>
               <p>{tran.item}</p>
-              <span>#{tran.amount}</span>
+              <span>#{ Math.abs(tran.amount) }</span>
             </li>
           )
           )}

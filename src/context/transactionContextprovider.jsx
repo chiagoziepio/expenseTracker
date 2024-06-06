@@ -11,22 +11,22 @@ const initialState = {
 
         {
             item: "salary",
-            amount: "530",
+            amount: 530,
             id: 1
         },
         {
             item: "textbook",
-            amount: "-230",
+            amount: -230,
             id: 2
         },
         {
             item: "tomatoes",
-            amount: "-400",
+            amount: -400,
             id: 3
         },
         {
             item: "birthday gift",
-            amount: "630",
+            amount: 630,
             id: 4
         },
     ]
@@ -36,6 +36,15 @@ const initialState = {
 
 const transactionContextprovider = ({children})=>{
  const [state , dispatch] = useReducer(transactionReducer,initialState)
+
+ function deletTransaction(id) {
+    dispatch(
+        {
+            type: 'DELTED_TRANSACTION',
+            payload: id
+        }
+    )
+ }
  
     return(
         <transctionContext.Provider value = {{state}} >
