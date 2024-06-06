@@ -7,7 +7,7 @@ import AddTransaction from './AddTransaction'
 import TransactionContextprovider from './context/transactionContextprovider'
 
 function App() {
-  const [transaction, setTransaction] = useState("")
+  const [transactions, setTransactions] = useState("")
   const [amount, setAmount] = useState("")
 
   return (
@@ -22,8 +22,8 @@ function App() {
         <Balance/>
         <History/>
         <AddTransaction 
-        transaction={transaction}
-        setTransaction={setTransaction}
+        transactions={transactions}
+        setTransactions={setTransactions}
         setAmount={setAmount}
         amount={amount}
         />

@@ -70,8 +70,8 @@ header{
   position: relative;
   margin-top: 9px;
 }
-.transactions li::before{
-  content: "x";
+
+.transactions li label{
   position: absolute;
   top: 10px;
   left: -15px;
@@ -83,7 +83,7 @@ header{
   font-size: 15px;
   display: none;
 }
-.transactions li:hover::before{
+.transactions li:hover label{
   display: block;
 }
 .transactions li p{

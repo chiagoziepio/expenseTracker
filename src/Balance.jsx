@@ -2,9 +2,9 @@ import React, { useContext } from 'react'
 import {transctionContext} from './context/transactionContextprovider'
 
 const Balance = () => {
-  const{state} = useContext(transctionContext)
-  const trans = state.transactions;
-  const amount = trans.map(tans => tans.amount )
+  const{transaction} = useContext(transctionContext)
+  /* const trans = state.transactions; */
+  const amount = transaction.map(tans => tans.amount )
   const incomeTotal = amount
         .filter(tans => tans > 0)
         .reduce(( p , c) => {

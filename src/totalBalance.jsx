@@ -2,9 +2,9 @@ import React, { useContext }  from 'react'
 import {transctionContext} from './context/transactionContextprovider'
 
 const totalBalance = () => {
-  const{state} = useContext(transctionContext)
-  const trans = state.transactions;
-  const amount = trans.map(tans => tans.amount);
+  const{transaction} = useContext(transctionContext)
+  /* const trans = state.transactions; */
+  const amount = transaction.map(tans => tans.amount);
   const total = amount.reduce(( p , c) => {
     return p + c
   },0).toFixed(2)

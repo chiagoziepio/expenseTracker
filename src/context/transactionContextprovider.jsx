@@ -40,14 +40,23 @@ const transactionContextprovider = ({children})=>{
  function deletTransaction(id) {
     dispatch(
         {
-            type: 'DELTED_TRANSACTION',
+            type: 'DELETED_TRANSACTION',
             payload: id
         }
     )
  }
+ function addTransaction (transaction){
+    dispatch(
+    {
+        type: 'ADDED_TRANSACTION',
+        payload: transaction
+    }
+    )
+ }
  
     return(
-        <transctionContext.Provider value = {{state}} >
+        <transctionContext.Provider value = {{
+           transaction: state.transactions, deletTransaction, addTransaction}} >
             {children}
         </transctionContext.Provider>
     )

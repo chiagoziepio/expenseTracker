@@ -1,16 +1,32 @@
-import React from 'react'
+import React, {useContext} from 'react'
+import {transctionContext} from './context/transactionContextprovider'
 
-const AddTransaction = ({transaction, setTransaction, amount, setAmount}) => {
+
+const AddTransaction = ({transactions, setTransactions, amount, setAmount}) => {
+  const { addTransaction, transaction } = useContext(transctionContext)
+
+  const handleAddTransction = (e)=>{
+   
+     e.preventDefault();
+   const newTransaction = {
+      id: transaction.length ? transaction[ transaction.length -1].id + 1: 1,
+      item : transactions,
+      amount : +amount
+    }
+    const allTransaction = transaction.concat(newTransaction)
+    addTransaction(allTransaction) 
+    console.log(transaction);
+  }
   return (
-    <form >
+    <form  onSubmit={handleAddTransction}>
         <p>Add Transaction</p>
 
         <div className="input_control">
             <input 
             type="text"
             required
-            value={transaction}
-            onChange={(e) => setTransaction(e.target.value)}
+            value={transactions}
+            onChange={(e) => setTransactions(e.target.value)}
             placeholder='Enter text'
             />
             
